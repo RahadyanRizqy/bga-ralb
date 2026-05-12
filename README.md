@@ -16,7 +16,5 @@ Penelitian dilakukan pada lingkungan virtualisasi Proxmox Virtual Environment de
 ```txt
 .
 ├── bga-go/
-│
 ├── ralb-go/
-│
 └── README.md
