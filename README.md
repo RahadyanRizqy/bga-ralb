@@ -16,9 +16,7 @@ Penelitian dilakukan pada lingkungan virtualisasi Proxmox Virtual Environment de
 ```txt
 .
 ├── bga-go/
-│   └── Implementasi Balancer Genetic Algorithm
 │
 ├── ralb-go/
-│   └── Implementasi Resource-Aware Least Busy
 │
 └── README.md
