@@ -5,11 +5,11 @@ Repository ini berisi implementasi dua algoritma dynamic load balancing yang dig
 - **Balancer Genetic Algorithm (BGA)**
 - **Resource-Aware Least Busy (RALB)**
 
-Penelitian dilakukan pada lingkungan virtualisasi Proxmox Virtual Environment dengan integrasi HAProxy sebagai load balancer dan aplikasi web UKM LAOS Course sebagai objek pengujian. :contentReference[oaicite:0]{index=0}
+Penelitian dilakukan pada lingkungan virtualisasi Proxmox Virtual Environment dengan integrasi HAProxy sebagai load balancer dan aplikasi web UKM LAOS Course sebagai objek pengujian.
 
 ## Judul Penelitian
 
-**Perbandingan Kinerja Dynamic Load Balancer Berbasis Balancer Genetic Algorithm dan Resource-Aware Least Busy pada Virtual Machine Web App UKM LAOS Course** :contentReference[oaicite:1]{index=1}
+**Perbandingan Kinerja Dynamic Load Balancer Berbasis Balancer Genetic Algorithm dan Resource-Aware Least Busy pada Virtual Machine Web App UKM LAOS Course**
 
 ## Struktur Repository
 
