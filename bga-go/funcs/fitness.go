@@ -5,14 +5,14 @@ import (
 	"math"
 )
 
-func CalcShareRatios(vmGHz []float64) []float64 {
+func CalcShareRatios(vmCPUs []float64) []float64 {
 	total := 0.0
-	for _, ghz := range vmGHz {
-		total += ghz
+	for _, cpu := range vmCPUs {
+		total += cpu		
 	}
-	shareRatios := make([]float64, len(vmGHz))
-	for i, ghz := range vmGHz {
-		shareRatios[i] = ghz / total
+	shareRatios := make([]float64, len(vmCPUs))
+	for i, cpu := range vmCPUs {
+		shareRatios[i] = cpu / total
 	}
 	return shareRatios
 }
@@ -44,14 +44,8 @@ func FitnessCalc(k *utils.Chromosome, cfg utils.BgaEnv) {
 		taskSizes[i] = cfg.TaskSize
 	}
 
-	// Ambil list GHz dari cfg.VMDetails
-	vmGHz := make([]float64, numVMs)
-	for i, vm := range cfg.VMDetails {
-		vmGHz[i] = vm.GHz
-	}
-
 	// Step 1: Hitung ShareRatio, VMShare, dan ShareUsed
-	shareRatios := CalcShareRatios(vmGHz)
+	shareRatios := CalcShareRatios(cfg.MaxCPUs)
 	totalTaskSize := float64(len(taskSizes)) * cfg.TaskSize
 	vmShares := CalcVMShare(shareRatios, totalTaskSize)
 	shareUsed := CalcShareUsed(taskSizes, k.Genes, numVMs)

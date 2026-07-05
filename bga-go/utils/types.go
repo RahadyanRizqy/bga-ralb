@@ -77,6 +77,7 @@ type BgaEnv struct {
 	HAProxyWeight  int
 	Logger         bool
 	ConsolePrint   bool
+	MaxCPUs        []float64
 	NumTasks       int
 	NumVMs         int // VMShareIdeal from NumTasks/NumVMs
 	PopulationSize int
@@ -90,4 +91,5 @@ type BgaEnv struct {
 	Strict         bool
 	UpdateNotify   bool
 	Balancer       bool
+
 }

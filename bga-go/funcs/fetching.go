@@ -35,3 +35,22 @@ func FetchStats(cfg utils.BgaEnv, client *http.Client) ([]utils.VM, error) {
 
 	return result.Data, nil
 }
+
+func FetchMaxCPU(cfg utils.BgaEnv, client *http.Client) ([]float64, error) {
+	vms, err := FetchStats(cfg, client)
+	if err != nil {
+		return nil, err
+	}
+
+	maxCPUs := make([]float64, 0)
+
+	for _, vm := range vms {
+		if vm.Type != "qemu" || vm.Status != "running" {
+			continue
+		}
+
+		maxCPUs = append(maxCPUs, float64(vm.MaxCPU))
+	}
+
+	return maxCPUs, nil
+}

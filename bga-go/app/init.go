@@ -36,6 +36,7 @@ func InitClient() {
 }
 
 func Start() {
+	InitClient()
 	fmt.Println("BGA Started!")
 
 	/*
@@ -44,6 +45,16 @@ func Start() {
 	funcs.SeedInit()
 	population := funcs.PopulationInit(cfg)
 
+	/*
+		Initial fetch for shareratios
+	*/
+	maxCPUs, err := funcs.FetchMaxCPU(cfg, client)
+	if err != nil {
+		fmt.Printf("Initial fetch error: %v\n", err)
+		return
+	}
+	cfg.MaxCPUs = maxCPUs
+	
 	/*
 		Fitness Calculation
 	*/
@@ -54,7 +65,6 @@ func Start() {
 	/*
 		Initialization of HTTP Client for FetchStats()
 	*/
-	InitClient()
 	csvFileName := utils.InitCSV(cfg)
 	prevTime := time.Now()
 
