@@ -126,7 +126,7 @@ func Start() {
 			validate = funcs.SomeWeightValidation(currentRes, prevWeights)
 			mode = "LOOSE"
 		}
-
+		// fmt.Printf("✅ [%s] VALIDATION %v\n", mode, validate)
 		if validate {
 			updateCount++
 			if cfg.UpdateNotify {
@@ -204,7 +204,7 @@ func Start() {
 			newPopulation[newChildIndex] = child2
 			newChildIndex++
 		}
-		fmt.Println(population)
+		// fmt.Println(population)
 		population = newPopulation // Population modified to be used later again as the currentBest
 		prevTime = now
 		iter++
